@@ -3,7 +3,7 @@
 ;
 ;e.g. (sum-of-squares 4 5 6)
 ;			=> 61
-(ns chariot.sicp.chapter1
+(ns chapter1.ex1-3
   (:use clojure.test))
 
 (defn square
