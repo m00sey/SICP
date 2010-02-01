@@ -56,4 +56,9 @@
   [x]
   (sqrt-iter 1.0 x))
 
-(de)
+;todo test the rest
+;find test that allow for a delta
+(deftest test-sqrt
+  (is(=(sqrt 9) 3.00009155413138)))
+
+(run-tests)
