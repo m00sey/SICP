@@ -8,18 +8,21 @@
 
 ;What happens when Alyssa attempts to use this to compute square roots? Explain.
 
-;The implementation of new-if as a procedure, means it will be evaluated with applicative order meaning square-iter
+;Answer for Scheme.
+;The implementation of new-if as a procedure, means it will be evaluated with applicative order, meaning square-iter
 ;happens before true/false has been evaluated
 ;if is a special form - so it is not evaluated using applicative order
 
 ;Think about expanding new-if using applicative order. i.e ex1-4
+
+;For clojure we need to look at the cond macro.
 (ns chapter1.ex1-6
   (:use clojure.test))
 
 (defn new-if
   [predicate then-clause else-clause]
-  (cond (predicate then-clause)
-    (else-clause))
+  (cond predicate then-clause
+    :default else-clause)
   )
 
 (defn abs [x]
