@@ -16,7 +16,6 @@
 
 (defn p []
   (p)
-  ;(recur)
   )
 
 ;test is reserved for clojure.text :(
@@ -35,3 +34,14 @@
 ;What happened?
 ;both 0 and (p) are evaluated before we actually run the body of test (before test is invoked?)
 ;evaluation of p is to call itself so we get stuck in an infinite loop
+
+;What about normal order?
+;The thing to remember here is that normal order expands everything first, then reduces.
+;when we expand (testp 0 (p))
+;we first expand 0, which is easy, that is 0
+;we then expand (p), which results in the body of p.
+;our body of testp after the expansion would look like
+;(if (= 0 0) 0 (p)))
+;there is nothing else to expand, as we then begin the reduce
+;we get to evaluating (= 0 0)
+;which results in 0
