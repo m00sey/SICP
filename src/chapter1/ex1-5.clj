@@ -1,4 +1,4 @@
-;Exercise 1.4.
+;Exercise 1.5.
 ;Ben Bitdiddle has invented a test to determine whether the interpreter he is faced with is using
 ; applicative-order evaluation or normal-order evaluation. He defines the following two procedures:
 ;(define (p) (p))
@@ -24,7 +24,7 @@
   [x y]
   (if (= x 0)
     0
-    7)
+    y)
   )
 
 ;chapter1.ex1-5=> (testp 0 (p))
