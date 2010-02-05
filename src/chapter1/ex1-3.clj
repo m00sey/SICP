@@ -7,28 +7,16 @@
   (:use clojure.test))
 
 (defn square
-  #^{:doc "square [x] multiples a number by itself "
-     :test (fn []
-       (assert (= 4 (square 2))))
-     :user/comment "."}
   [x]
   (* x x)
   )
 
 (defn sum-of-squares
-  #^{:doc "sum-of-squares [x y] "
-     :test (fn []
-       (assert (= 8 (sum-of-squares 2 2))))
-     :user/comment "."}
   [x y]
   (+ (square y) (square x))
   )
 
 (defn sum-squares-of-larger-numbers
-    #^{:doc "sum-squares-of-larger-numbers [x y z]"
-     :test (fn []
-       (assert (= (sum-squares-of-larger-numbers 2 3 4) 25)))
-     :user/comment "."}
   [x y z]
   (if (> x y)
     (if (> y z)
